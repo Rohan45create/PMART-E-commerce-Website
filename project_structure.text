@@ -1,0 +1,180 @@
+- About_Page
+  - AboutUs.css
+  - AboutUs.html
+  - AboutUs.js
+  - output.css
+- add_to_cart.php
+- add_to_favorite.php
+- assets
+  - assets.js
+  - bottom-nav.html
+  - footer.html
+  - header.html
+- checkout
+  - checkout.css
+  - checkout.html
+  - checkout.js
+  - clear_cart.php
+  - create_order.php
+  - output.css
+- config.php
+- Contact_page
+  - Contact.css
+  - Contact.html
+  - output.css
+- db_connection.php
+- FAQs
+  - faq.css
+  - faq.html
+  - faq.js
+  - output.css
+- favorite_page
+  - favorite.css
+  - favorite.html
+  - favorite.js
+  - get_favorite_Summary.php
+  - output.css
+  - remove_from_favorite.php
+  - update_favorite.php
+- Feedback
+  - debug.log
+  - Feedback.css
+  - Feedback.html
+  - Feedback.js
+  - feedback.php
+  - output.css
+  - save_feedback.php
+- fetch.py
+- fetch_cart.php
+- fetch_favorite.php
+- fetch_products.php
+- Home Page
+  - add_to_cart.php
+  - fetch.js
+  - fetch_cart.php
+  - index.html
+  - index.php
+  - script.js
+  - style-mediaQueries.css
+  - style.css
+- Images
+  - About Page
+    - bhushan.jpg
+    - portrait-two-african-females-holding-shopping-bags-while-reacting-something-their-smartphone 1.png
+    - rohan.jpg
+    - sid.jpg
+  - App
+    - app image tab.jpg
+    - app mobile bg.jpg
+    - appstore-btn.png
+    - googleplay-btn.png
+    - Pmart app phone.png
+  - Categories
+    - categories1.png
+    - categories2.png
+    - categories3.png
+    - categories4.png
+    - categories5.png
+    - categories6.png
+    - categories7.png
+  - categories svg
+    - all.svg
+    - electronics.svg
+    - fashion.svg
+    - furniture.svg
+    - smartphone.svg
+    - watches.svg
+  - Clients
+    - client-1.jpg
+    - client-2.jpg
+    - client-3.jpg
+  - Hero
+    - bicycle.png
+    - Hero1 img.png
+    - image (3).png
+    - pngegg.png
+    - purple shirt.png
+    - red.png
+    - sumsang s25 ultra.jpg
+  - Item listing
+    - Coffee table.png
+    - image (1).png
+    - image (2).png
+    - image (3).png
+    - image (4).png
+    - image (5).png
+    - image.png
+  - Partners
+    - logo-1.png
+    - logo-2.png
+    - logo-3.png
+    - logo-4.png
+  - Sliders
+    - cookware.jpg
+    - image (2).png
+    - Iphone banner.jpg
+    - saving days.jpg
+- Login_and_Registration
+  - config.php
+  - Login and Registration CSS.css
+  - Login and Registration HTML.html
+  - Login and Registration JS.js
+  - login.js
+  - login.php
+  - register.php
+- Notification
+  - notification.css
+  - notification.html
+  - notification.js
+  - output.css
+- order_summary
+  - order_summary.css
+  - order_summary.html
+  - order_summary.js
+  - output.css
+- package-lock.json
+- package.json
+- Pmart Logo (2).svg
+- pmart logo.png
+- product_cart
+  - cart.js
+  - get_cart_summary.php
+  - output.css
+  - product_cart.css
+  - product_cart.html
+  - product_cart.js
+  - remove_from_cart.php
+  - update_cart.php
+- product_details
+  - add_to_cart.php
+  - clear_cart_for_direct_order.php
+  - database.php
+  - fetch_cart.php
+  - fetch_product_image.php
+  - output.css
+  - product_details.css
+  - product_details.html
+  - product_details.js
+  - product_details.php
+  - set_direct_order.php
+- product_listing
+  - fetch_products.php
+  - output.css
+  - product_listing.css
+  - product_listing.html
+  - product_listing.js
+  - search-results-handler.js
+- Profile
+  - output.css
+  - profile.css
+  - profile.html
+  - profile.js
+  - update_profile.php
+  - verify_password.php
+- project_structure.text
+- search-handler.js
+- search.php
+- style.css
+- tailwind.config.js
+- test.html
+- test_db.php

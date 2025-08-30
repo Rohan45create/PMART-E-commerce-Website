@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+:root {
+    --theme-color: #44babd;
+    --light-theme: #ddfeffd6;
+    --hover-color: #e9fefd70;
+    --button: #2ca0a5;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--theme-color);
+}
+input[type="range"]::-moz-range-thumb {
+    background-color: var(--theme-color);
+}
+
+

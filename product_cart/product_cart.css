@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+:root {
+    --theme-color: #44babd;
+    --light-theme: #ddfeffd6;
+    --hover-color: #e9fefd70;
+    --button: #2ca0a5;
+}
+
+#proceed-btn{
+    color: white;
+}
+
+#proceed-btn:hover{
+    background-color: var(--button);
+}
+
+.continue-shopping{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

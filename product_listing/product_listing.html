@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../Home Page/style.css" />
+    <link rel="stylesheet" href="../Home Page/style-mediaQueries.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="./notification.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <title>PMART - products</title>
+</head>
+
+<body class="font-[Inter]">
+    <!-- Navigation bar  -->
+    <header>
+    <div class="top-bar">
+      <div>Rupees</div>
+      <div>
+        <a href="../Feedback/Feedback.html">Feedback</a>
+        <a href="../FAQs/faq.html">FAQ</a>
+        <a href="../About_Page/AboutUs.html">About Us</a>
+        <a href="../Contact_page/Contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="header">
+      <div class="nav-container flex-col">
+        <div class="combine flex justify-between w-full">
+          <div class="logo"><span>P</span>MART</div>
+          <!-- Hamburger Menu Icon for Mobile -->
+
+          <div class="hamburger-menu">
+            <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+
+            <div class="mobile-dropdown">
+              <span class="material-symbols-outlined" id="back-arrow">
+                arrow_back
+              </span>
+              <a href="../product_listing/product_listing.html">All Categories</a>
+              <a href="../Feedback/Feedback.html">Feedback</a>
+              <a href="../Contact_page/Contact.html">Contact Us</a>
+              <a href="../About_Page/AboutUs.html">About Us</a>
+              <a href="../product_listing/product_listing.html">Today's Deals</a>
+              <a href="../product_listing/product_listing.html">Special Event</a>
+              <a href="../FAQs/faq.html">FAQ's</a>
+            </div>
+          </div>
+        </div>
+        <div class="search search-bar2 w-full hidden">
+          <input type="text" class="search-input" placeholder="Search here" id="search-input" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+
+      </div>
+      <div class="search-link">
+        <div class="search search-bar">
+          <input type="text" class="search-input" placeholder="Search here" />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        <div class="nav-links">
+          <a href="../Home Page/index.html">Home</a>
+          <div class="dropdown-container">
+            <a href="../product_listing/product_listing.html" class="all-cat">All Category <i
+                class="fa-solid fa-chevron-down"></i></a>
+            <div class="dropdown">
+              <a href="../product_listing/product_listing.html">Electronics</a>
+              <a href="../product_listing/product_listing.html">Clothing</a>
+              <a href="../product_listing/product_listing.html">Watches</a>
+            </div>
+          </div>
+          <a href="../product_listing/product_listing.html">Today's Deals</a>
+          <a href="../product_listing/product_listing.html">Special Event</a>
+        </div>
+      </div>
+      <div class="icons">
+        <a href="../favorite_page/favorite.html"><i class="far fa-heart"></i></a>
+        <a href="../Profile/profile.html"><i class="far fa-user"></i></a>
+        <a href="../product_cart/product_cart.html" class="svg-cart">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_90_3688)">
+              <path
+                d="M7.875 19.25C8.35825 19.25 8.75 18.8582 8.75 18.375C8.75 17.8918 8.35825 17.5 7.875 17.5C7.39175 17.5 7 17.8918 7 18.375C7 18.8582 7.39175 19.25 7.875 19.25Z"
+                stroke="#2E3A59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M17.5 19.25C17.9832 19.25 18.375 18.8582 18.375 18.375C18.375 17.8918 17.9832 17.5 17.5 17.5C17.0168 17.5 16.625 17.8918 16.625 18.375C16.625 18.8582 17.0168 19.25 17.5 19.25Z"
+                stroke="#2E3A59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M0.875 0.875H4.375L6.72 12.5913C6.80001 12.9941 7.01917 13.356 7.3391 13.6135C7.65904 13.8711 8.05936 14.0079 8.47 14H16.975C17.3856 14.0079 17.786 13.8711 18.1059 13.6135C18.4258 13.356 18.645 12.9941 18.725 12.5913L20.125 5.25H5.25"
+                stroke="#2E3A59" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <defs>
+              <clipPath id="clip0_90_3688">
+                <rect width="21" height="21" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </a>
+        <a href="#" id="menu-vertical"><i class="fa-solid fa-ellipsis-vertical"></i>
+
+          <div class="input">
+            <a href="../Home Page/index.html">
+              <button class="value">
+                <span class="material-symbols-outlined"> home </span>
+                Home
+              </button></a>
+            <a href="../product_listing/product_listing.html">
+              <button class="value">
+                <span class="material-symbols-outlined"> category </span>
+                All Products
+              </button></a>
+            <a href="../product_listing/product_listing.html">
+              <button class="value">
+                <span class="material-symbols-outlined"> event </span>
+                Today's deals
+              </button></a>
+            <a href="../product_listing/product_listing.html">
+              <button class="value">
+                <span class="material-symbols-outlined"> stars </span>
+                Special Event
+              </button></a>
+            <a href="#">
+              <button class="value">
+                <span class="material-symbols-outlined"> notifications </span>
+                Notifications
+              </button>
+            </a>
+          </div>
+        </a>
+      </div>
+    </div>
+  </header>
+    <!-- Navigation bar Ends-->
+
+    <!-- main section -->
+    <main class="lg:mx-[60px] mx-[20px] sm:my-10">
+        <!-- breadcrumb  -->
+        <nav aria-label="Breadcrumb">
+            <ol class="flex items-center gap-1 text-sm text-gray-600">
+                <li>
+                    <a href="../Home Page/index.html"
+                        class="block transition no-underline decoration-0 hover:text-gray-700">
+                        <span class="sr-only"> Home </span>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </a>
+                </li>
+
+                <li class="rtl:rotate-180">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </li>
+
+                <li>
+                    <a href="#" class="text-gray-500 cursor-not-allowed" aria-disabled="true">
+                        Product Name
+                        <!--Fetch product name-->
+                    </a>
+                </li>
+            </ol>
+        </nav>
+        <!-- breadcrumb ends  -->
+
+        <!-- Heading -->
+        <h2 class="mt-3 text-xl font-semibold text-gray-900 sm:text-2xl">All Products</h2>
+        <!-- Heading ends -->
+
+        <!-- FILTER Buttons -->
+        <div class="container flex w-full md:flex-row flex-col">
+            <!-- filter Buttons -->
+            <div class="filter-buttons flex md:hidden gap-2 w-full">
+                <!-- filter button -->
+                <button type="button"
+                    class="filter-btn flex-1 h-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center gap-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+                    <span class="material-symbols-outlined">filter_alt</span>
+                    <span>Filters</span>
+                </button>
+
+                <!-- sort by button -->
+                <div class="relative flex-1 h-full">
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                        class="w-full h-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex items-center justify-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        type="button">
+                        <span>Sort By</span>
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdown"
+                        class="absolute z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44">
+                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                            <li><a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Low
+                                    To High</a></li>
+                            <li><a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">High
+                                    To Low</a></li>
+                            <li><a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Latest</a>
+                            </li>
+                            <li><a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Oldest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- filter Buttons ends-->
+
+            <!-- Black -->
+            <div class="black-windows fixed inset-0 bg-black opacity-50 z-49 hidden"></div>
+            <!-- Black ends -->
+
+            <!-- Sidebar -->
+            <div id="sidebar"
+                class="md:w-96 w-5/6 overflow-y-scroll bg-white shadow-lg rounded-lg px-4 md:h-fit h-9/10 md:m-0 my-auto md:block md:relative hidden fixed top-6 left-2 z-50 right-2 mb-10 mx-auto md:pb-4 pb-20 ">
+                <!-- close button -->
+                <div class="close absolute top-2 right-2 md:hidden" id="closeSidebar">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+
+                <!-- Sidebar -->
+                <h2 class="text-lg font-semibold text-gray-800 mb-4">Filters</h2>
+
+                <!-- Price Range -->
+                <div class="w-full p-4 bg-white">
+                    <label class="block text-gray-700 text-lg font-semibold mb-2">Price Range</label>
+                    <div class="relative">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>₹<span id="minValue">0</span></span>
+                            <span>₹<span id="maxValue">8,29,917</span></span>
+                        </div>
+                        <div class="relative h-4 mt-2">
+                            <input type="range" id="minPrice" min="0" max="829917" value="0" step="100"
+                                class="absolute w-full h-1 bg-transparent appearance-none cursor-pointer z-20" />
+                            <input type="range" id="maxPrice" min="0" max="829917" value="10000" step="100"
+                                class="absolute w-full h-1 bg-transparent appearance-none cursor-pointer z-20" />
+                            <div id="sliderTrack" class="absolute h-1 bg-blue-500 rounded-lg"></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex items-center border rounded-lg px-3 py-2 w-28">
+                            <span class="text-gray-600">₹</span>
+                            <input type="number" id="minInput" min="0" max="829917" step="100" value="0"
+                                class="w-full text-center outline-none border-none" />
+                        </div>
+                        <span class="text-gray-600 text-lg">—</span>
+                        <div class="flex items-center border rounded-lg px-3 py-2 w-28">
+                            <span class="text-gray-600">₹</span>
+                            <input type="number" id="maxInput" min="0" max="829917" step="100" value="829917"
+                                class="w-full text-center outline-none border-none" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add this to your sidebar -->
+                <!-- Brands Section -->
+                <div class="mt-4" data-filter="brands">
+                    <div class="flex flex-col justify-between">
+                        <label class="text-sm font-medium text-gray-700">Brands</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Search brands..."
+                                class="brand-search pl-8 pr-2 py-1 text-sm border rounded-lg"
+                                onkeyup="filterCheckboxes(this, 'brands')">
+                            <span
+                                class="material-symbols-outlined absolute left-2 top-2 text-gray-400 text-sm">search</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1 mt-2 max-h-40 overflow-y-auto">
+                        <!-- Top 5 brands -->
+                        <div class="visible-brands">
+                            <!-- Add your top 5 brands here -->
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Apple</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Oppo</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Realme</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Samsung</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Vivo</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Nike</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Puma</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Off
+                                    White</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Fashion
+                                    Trends</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Gigabyte</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Classic
+                                    Wear</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Casual
+                                    Comfort</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Urban
+                                    Chic</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Fashionista</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Heshe</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Prada</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Elegance
+                                    Collection</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Annibale
+                                    Colombo</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Furniture
+                                    Co.</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Knoll</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Bath
+                                    Trends</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Amazon</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Beats</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">TechGear</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">GadgetMaster</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">SnapTech</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">ProVision</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">No
+                                    Brand</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Fashion
+                                    Timepieces</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Longines</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Rolex</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">OLEVS</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Fire-Boltt</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Boult</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Casio</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">TIMEX</span></label>
+
+                        </div>
+                        <!-- Remaining brands (hidden initially) -->
+                        <div class="hidden-brands hidden">
+                            <!-- Add remaining brands here -->
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Noise</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">CRESTELLO</span></label>
+                            <!-- ... all other brands ... -->
+                        </div>
+                        <button class="text-blue-600 text-sm show-more-brands" onclick="toggleShowMore('brands')">Show
+                            more</button>
+                    </div>
+                </div>
+
+                <!-- Categories Section -->
+                <div class="mt-4" data-filter="categories">
+                    <div class="flex flex-col justify-between">
+                        <label class="text-sm font-medium text-gray-700">Categories</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Search categories..."
+                                class="category-search pl-8 pr-2 py-1 text-sm border rounded-lg"
+                                onkeyup="filterCheckboxes(this, 'categories')">
+                            <span
+                                class="material-symbols-outlined absolute left-2 top-2 text-gray-400 text-sm">search</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1 mt-2 max-h-40 overflow-y-auto">
+                        <!-- Top 5 categories -->
+                        <div class="visible-categories">
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Electronics</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Shoes</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Watches</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Mobile
+                                    Accessories</span></label>
+                            <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                    class="ml-2">Home
+                                    Kitchen</span></label>
+                        </div>
+                        <!-- Remaining categories (hidden initially) -->
+                        <div class="hidden-categories hidden">
+                            <!-- Add remaining categories here -->
+                            <label class="flex items-center"><input type="checkbox"> <span
+                                    class="ml-2">Clothes</span></label>
+                            <label class="flex items-center"><input type="checkbox"> <span
+                                    class="ml-2">Furniture</span></label>
+                            <!-- ... all other categories ... -->
+                        </div>
+                        <button class="text-blue-600 text-sm show-more-categories"
+                            onclick="toggleShowMore('categories')">Show more</button>
+                    </div>
+                </div>
+
+                <!-- Sort By -->
+                <div class="mt-4">
+                    <label class="text-sm font-medium text-gray-700">Sort By</label>
+                    <select
+                        class="w-full mt-2 p-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-teal-500">
+                        <option>High To Low</option>
+                        <option>Low To High</option>
+                        <option>Newest First</option>
+                        <option>Discount</option>
+                    </select>
+                </div>
+
+                <!-- Discount -->
+                <div class="mt-4" data-filter="discount">
+                    <label class="text-sm font-medium text-gray-700">Discount</label>
+                    <div class="space-y-1 mt-2">
+                        <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                class="ml-2">Upto
+                                10%</span></label>
+                        <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                class="ml-2">Upto
+                                20%</span></label>
+                        <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                class="ml-2">Upto
+                                70%</span></label>
+                        <label class="flex items-center"><input type="checkbox" class="accent-teal-500"> <span
+                                class="ml-2">Upto
+                                90%</span></label>
+                    </div>
+                </div>
+
+                <!-- Availability -->
+                <div class="mt-4">
+                    <label class="text-sm font-medium text-gray-700">Availability</label>
+                    <div class="space-y-1 mt-2">
+                        <label class="flex items-center"><input type="radio" name="availability" class="accent-teal-500"
+                                value="In Stock">
+                            <span class="ml-2">In Stock</span></label>
+                        <label class="flex items-center"><input type="radio" name="availability" class="accent-teal-500"
+                                value="All" checked>
+                            <span class="ml-2">All</span></label>
+                    </div>
+                </div>
+
+                <!-- Button -->
+
+                <button id="applyFilters"
+                    class="flex items-center gap-2 px-4 py-2 bg-(--theme-color) text-white rounded-lg hover:bg-[#3aa2a5] transition mt-2 cursor-pointer">
+                    <span class="material-symbols-outlined">
+                        tune
+                    </span>
+                    <span>Apply Filters</span>
+                </button>
+
+
+                <button id="clearFilters"
+                    class="flex items-center gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition mt-2 cursor-pointer">
+                    <span class="material-symbols-outlined">filter_alt_off</span>
+                    <span>Clear Filters</span>
+                </button>
+
+                <!-- Add below your existing filters -->
+                <div id="search-header" class="px-4 py-2 bg-gray-50 rounded-lg mb-4"></div>
+            </div>
+            <!-- sidebar ends -->
+
+            <!-- products -->
+            <div class="products grid gap-6 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 h-auto w-full">
+                <!-- Products to be fetch  -->
+
+            </div>
+            <!-- products ends -->
+        </div>
+
+    </main>
+    <!-- main section ends -->
+
+    <!-- Bottom Navigation -->
+    <section>
+    <a href="../Home Page/index.html">
+        <label title="Home" for="home" class="label active">
+            <span class="material-symbols-outlined">home</span>
+            <span class="icon-label">Home</span>
+        </label>
+    </a>
+    <a href="../product_cart/product_cart.html">
+        <label title="Cart" for="cart" class="label">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="icon-label">Cart</span>
+        </label>
+    </a>
+    <a href="../favorite_page/favorite.html">
+        <label title="Favorite" for="favorite" class="label">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="icon-label">Favorite</span>
+        </label>
+    </a>
+    <a href="#notifications">
+        <label title="Notifications" for="notifications" class="label">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="icon-label">Notifications</span>
+        </label>
+    </a>
+    <a href="../Profile/profile.html">
+        <label title="Profile" for="profile" class="label">
+            <span class="material-symbols-outlined">person</span>
+            <span class="icon-label">Profile</span>
+        </label>
+    </a>
+</section>
+    <!-- Bottom Navigation ends -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <h2 class="footer-logo">PMART</h2>
+            <p class="footer-description">
+                Ecommerce is a free UI Kit from Paperpillar that you can use for your
+                personal or commercial project.
+            </p>
+            <div class="footer-email">
+                <input type="email" placeholder="Type your email address" class="footer-input" />
+                <button class="footer-submit">Submit</button>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <div class="footer-row">
+                <div class="footer-column">
+                    <h3>POPULAR</h3>
+                    <ul>
+                        <li>Shoes</li>
+                        <li>Clothes</li>
+                        <li>Watches</li>
+                        <li>Electronics</li>
+                        <li>Accessories</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>MENU</h3>
+                    <ul>
+                        <li>All Category</li>
+                        <li>Today's Deals</li>
+                        <li>Special Events</li>
+                        <li>Testimonial</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>OTHER</h3>
+                <ul>
+                    <li>Feedback</li>
+                    <li>FAQ</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Terms and Conditions</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- footer ends -->
+
+    <script src="../Home Page/script.js"></script>
+    <script src="./product_listing.js"></script>
+    <!-- Add to header.html -->
+    <script src="./search-results-handler.js"></script>
+    <script src="../search-handler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="../favorite_page/favorite.js"></script>
+    <script src="../product_cart/cart.js"></script>
+    
+</body>
+
+</html>

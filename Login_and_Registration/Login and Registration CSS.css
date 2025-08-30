@@ -1,0 +1,236 @@
+/* Center the form on the page */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 10;
+    background-color: #f3f3f3;
+}
+
+input[type='radio'] {
+    accent-color: #44babd;
+}
+
+.head{
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 22px;
+    text-align: center;
+}
+
+h2 span{
+    color: black;
+}
+
+
+.mobile{
+    border: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Form styling */
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 10px;
+    width: 450px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 10px;
+    width: 450px;
+    border-radius: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+::placeholder {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form button {
+    align-self: flex-end;
+}
+
+/* Label styling */
+.flex-column > label {
+    color: #151717;
+    font-weight: 600;
+}
+
+/* Input field styling */
+.inputForm {
+    border: 1.5px solid #ecedec;
+    border-radius: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.input {
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.inputForm:focus-within {
+    border: 1.5px solid #44babd;
+}
+
+/* Flexbox row styling */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+/* Label for radio button */
+.flex-row > div > label {
+    font-size: 14px;
+    color: black;
+    font-weight: 400;
+}
+
+/* Link styling */
+.span {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #44babd;;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Submit button styling */
+.button-submit {
+    margin: 20px 0 10px 0;
+    /* background-color: #151717; */
+    border: 1px solid black;
+    /* color: white; */
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* .button-submit:hover{
+    background-color: black;
+} */
+
+/* Text styling */
+.p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    margin: 0px 0;
+}
+.p.line{
+    margin-top: 0px;
+}
+
+/* Social buttons styling */
+.btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #ededef;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    border: 1px solid #44babd;
+}
+
+/*Button*/
+.button-submit {
+    border-radius: 10px;
+    border: 1px solid #383838;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+}
+   
+.button-submit::before,
+.button-submit::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+}
+   
+.button-submit::before {
+    left: -10px;
+    background: #000000;
+}
+   
+.button-submit::after {
+    right: -10px;
+    background: #000000;
+}
+   
+.button-submit:hover::before,
+.button-submit:hover::after {
+    width: 58%;
+}
+   
+.button-submit:hover span {
+    color: #ffffff;
+    transition: 0.3s;
+}
+   
+.button-submit span {
+    color: #000000;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+}
+
+#invalid-email, #invalid-regemail, #span-name, #span-password{
+    color: red;
+    font-size: 12px;
+}
+
+.required{
+    color: red;
+}

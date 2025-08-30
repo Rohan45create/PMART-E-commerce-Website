@@ -1,0 +1,133 @@
+document.addEventListener("DOMContentLoaded", function () {
+    function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    function fetchAndDisplayResults() {
+        let searchQuery = sessionStorage.getItem("searchQuery") || getQueryParam("q");
+
+        if (!searchQuery) {
+            document.querySelector(".products").innerHTML = "<p>Please enter a search term.</p>";
+            return;
+        }
+
+        // Display search term in the input field
+        document.querySelector(".search-input").value = searchQuery;
+
+        fetch(`http://localhost/Pmart_official/search.php?q=${encodeURIComponent(searchQuery)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length === 0) {
+                    document.querySelector(".products").innerHTML = `<div class="bg-white">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-sm text-center">
+                    <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-primary-600">Not Found</h1>
+                    <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">Product is not present on this site</p>
+                    <p class="mb-4 text-lg font-light text-gray-500">Sorry, we can't find that page. You'll find lots to explore on the home page.</p>
+                    <a href="../Home Page/index.html" class="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4">Back to Homepage</a>
+                </div>   
+            </div>
+        </div>`;
+                    return;
+                }
+
+                let resultsHTML = '<div class="products mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4 h-auto">';
+                data.forEach(product => {
+                    resultsHTML += `
+                        <a href="../product_details/product_details.php?product_id=${product.product_id}" class="product-link">
+        <div
+            class="product-card w-full max-w-sm bg-white shadow-md rounded-xl hover:scale-105 hover:shadow-xl relative">
+            <span
+                class="dis-badge absolute top-2 left-2 text-sm bg-green-200 text-green-800 px-2 py-1 rounded-full z-10">
+                ${Math.round(((product.actual_price - product.selling_price) / product.actual_price) * 100)}% OFF</span>
+            <!-- Like Button -->
+            <label class="absolute top-2 right-2 cursor-pointer">
+                <input type="checkbox" class="hidden peer" />
+                <svg class="w-7 h-7 text-gray-400 peer-checked:text-red-500 peer-checked:fill-red-500 transition duration-300"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+            </label>
+
+            <img src="${product.product_image}" alt="${product.product_name}"
+                class="product-image h-80 w-72 object-cover rounded-t-xl bg-white" />
+            <div class="product-info px-4 py-3 w-72">
+                <span class="product-brand text-gray-400 mr-3 uppercase text-xs">
+                    ${product.product_brand}</span>
+                <p class="product-name text-lg font-bold text-black truncate block capitalize"
+                    title="${product.product_name}">
+                    ${product.product_name}
+                </p>
+                <div class="product-price flex items-center">
+                    <p class="selling-price text-lg font-semibold text-black cursor-auto my-3">₹${product.selling_price}
+                    </p>
+                    <del>
+                        <p class="actual-price text-sm text-gray-600 cursor-auto ml-2">₹
+                            ${product.actual_price}
+                        </p>
+                    </del>
+                </div>
+
+                <form class="max-w-xs mx-auto flex justify-around items-center">
+                    <label for="quantity-input" class="block mb-2 text-sm font-medium text-gray-900">Quantity:</label>
+                    <div class="relative flex items-center max-w-[8rem]">
+                        <button type="button" id="decrement-button"
+                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-2 focus:outline-none">
+                            <svg class="w-3 h-3 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 18 2">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h16" />
+                            </svg>
+                        </button>
+                        <input type="text" id="quantity-input"
+                            class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+                            value="1" required />
+                        <button type="button" id="increment-button"
+                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-2 focus:outline-none">
+                            <svg class="w-3 h-3 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 18 18">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M9 1v16M1 9h16" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500"></p>
+                </form>
+
+                <button
+                    class="cart-btn mt-4 w-full bg-black text-white py-2 rounded-xl shadow-lg hover:bg-gray-800 transition duration-300 cursor-pointer">
+                    <span class="material-symbols-outlined">
+                        shopping_cart
+                    </span> Add
+                    to Cart</button>
+            </div>
+        </div>
+    </a>
+                    `;
+                });
+                resultsHTML += '</div>';
+                document.querySelector(".products").innerHTML = resultsHTML;
+            })
+            .catch(error => {
+                console.error("Error fetching search results:", error);
+                document.querySelector(".products").innerHTML = "<p>Error loading products.</p>";
+            });
+    }
+
+    fetchAndDisplayResults(); // Fetch results when the page loads
+
+    // Handle searches inside product_listing.html itself
+    document.querySelectorAll(".search-icon").forEach(icon => {
+        icon.addEventListener("click", fetchAndDisplayResults);
+    });
+
+    document.querySelectorAll(".search-input").forEach(input => {
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                fetchAndDisplayResults();
+            }
+        });
+    });
+});

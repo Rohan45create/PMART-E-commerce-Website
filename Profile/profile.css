@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+    --theme-color: #44babd;
+    --light-theme: #ddfeffd6;
+    --hover-color: #e9fefd70;
+    --button: #2ca0a5;
+}
+
+
+#change-btn {
+    outline: none;
+    color: white;
+    background-color: #dc2626; /* red-700 */
+    font-weight: 500; /* font-medium */
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem; /* text-sm */
+    padding: 0.625rem 1.25rem; /* px-5 py-2.5 */
+    margin-bottom: 0.5rem; /* mb-2 */
+    margin-inline-end: 0.5rem; /* me-2 */
+    width: fit-content; /* w-fit */
+    transition: background-color 0.2s ease-in-out;
+}
+
+#change-btn:hover {
+    background-color: #b91c1c; /* hover:bg-red-800 */
+}
+
+#change-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.5); /* focus:ring-4 focus:ring-red-300 */
+}
+
+#change-btn.dark:hover {
+    background-color: #dc2626; /* dark:hover:bg-red-700 */
+}

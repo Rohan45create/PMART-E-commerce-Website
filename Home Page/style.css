@@ -1,0 +1,1846 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,500&display=swap");
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* roots */
+:root {
+  --theme-color: #44babd;
+  --light-theme: #ddfeffd6;
+  --hover-color: #e9fefd70;
+  --button: #2ca0a5;
+}
+
+.top-bar {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 24px 60px;
+  height: 30px;
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar div {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  /* Prevents wrapping */
+}
+
+.top-bar div a {
+  margin-left: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+.top-bar div a:hover {
+  color: black;
+}
+
+.header {
+  background-color: #fff;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #eaeaea; */
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.header .logo span{
+  color: var(--theme-color);
+}
+
+#menu-vertical {
+  display: none;
+}
+
+.search-link {
+  display: flex;
+  width: 702px;
+  /* Combined width for search bar and categories */
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.header .search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 312px;
+}
+
+/* Mobile search */
+.search-bar2 {
+  display: none;
+  align-items: center;
+  border: 1px solid #eaeaea;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.search-bar2 input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.search-bar2 i {
+  color: #ccc;
+  margin-left: 10px;
+}
+.search-bar2 i {
+  color: #ccc;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.search-bar2 input:focus+i {
+  color: #000;
+}
+/* mobile search ends */
+
+.header .search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.header .search-bar i {
+  color: #ccc;
+  margin-left: 10px;
+}
+
+.header .nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+/* Dropdown: */
+/* General container styling */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styling for "All Category" button */
+.all-cat {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.all-cat:hover {
+  transform: translateY(-2px);
+  /* Lift effect */
+}
+
+/* Dropdown menu styling */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+/* Show dropdown on hover */
+.dropdown-container:hover .dropdown {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animation for dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Links inside dropdown */
+.dropdown a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown a:hover {
+  background-color: #f8f9fa;
+  /* Light gray background on hover */
+  color: var(--theme-color);
+  /* Blue text */
+}
+
+/* Additional hover effect for main links */
+a:hover {
+  color: var(--theme-color);
+}
+
+.cat {
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.cat a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.cat a:hover {
+  background-color: #ddd;
+}
+
+.header .nav-links .all-cat:hover .dropdown {
+  display: inline-block;
+}
+
+.header .nav-links a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-links:focus,
+.nav-links:active {
+  outline: none;
+  /* Remove default outline */
+}
+
+.nav-links::after {
+  content: "";
+  /* Create a pseudo-element for the outline */
+  position: absolute;
+  left: 50%;
+  /* Center the outline */
+  bottom: -5px;
+  /* Position below the text */
+  width: 0;
+  /* Start with 0 width */
+  height: 2px;
+  /* Outline thickness */
+  background: #121212;
+  /* Outline color */
+  transition: width 0.3s ease, left 0.3s ease;
+  /* Transition for width and left */
+}
+
+.header .nav-links a:hover {
+  color: var(--theme-color);
+}
+
+.nav-links:focus::after,
+.nav-links:active::after,
+.nav-links:hover::after {
+  width: 100%;
+  /* Full width on focus, active, or hover */
+  left: 0;
+  /* Align to the left */
+}
+
+/* menu */
+.hamburger-menu {
+  display: none;
+  /* Hidden by default on desktop */
+  cursor: pointer;
+}
+#back-arrow{
+  position: absolute;
+  /* margin-bottom: 50px; */
+  top: 55px;
+  cursor: pointer;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+.mobile-dropdown a:hover{
+  background-color: var(--hover-color);
+  
+}
+
+
+.hamburger-menu i {
+  font-size: 24px;
+  color: black;
+  z-index: 1100;
+}
+
+.mobile-dropdown {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 150px 0px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: flex-end;
+  gap: 5px;
+  z-index: 9999;
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: end;
+  transition: right 0.4s ease;
+}
+
+/* Menu visible class */
+.hamburger-menu .show {
+  right: 0%;
+  /* Slide into view */
+}
+
+/* Link styles */
+.mobile-dropdown a {
+  overflow: hidden;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  /* height: 50px; */
+  height: fit-content;
+  width: 90%;
+  margin-right: 20px;
+  align-content: center;
+}
+
+.mobile-dropdown.back {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* Adjust to the position of the hamburger icon */
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.mobile-dropdown a:hover {
+  color: var(--theme-color);
+  /* Highlight color on hover */
+}
+
+/* Optional: Prevent page scrolling when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+
+.header .icons {
+  display: flex;
+  align-items: center;
+}
+
+.header .icons a {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header .icons i {
+  font-size: 18px;
+  color: #333;
+}
+
+
+/* Ensure consistent sizing for the new SVG icon */
+.header .icons svg {
+  height: 20px;
+  width: 20px;
+  fill: none;
+  stroke: #333;
+  stroke-width: 2px;
+  vertical-align: middle;
+  /* Align vertically with text icons */
+}
+
+/* For tab and mobi8le */
+/* General Dropdown Styling */
+/* From Uiverse.io by shadowmurphy */
+#menu-vertical:hover .input {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.input.show {
+  display: flex;
+  /* Show when the class is toggled */
+}
+
+.input {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 0px;
+  right: 50px;
+  z-index: 1;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  width: 200px;
+  background-color: #ffffff;
+  justify-content: center;
+  border-radius: 5px
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.value {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  color: black;
+  display: flex;
+  position: relative;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.value:not(:active):hover,
+.value:focus {
+  background-color: #fce0e0;
+}
+
+.value:focus,
+.value:active {
+  background-color: #1A1F24;
+  outline: none;
+}
+
+.value::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  width: 5px;
+  height: 80%;
+  background-color: #2F81F7;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.value:focus::before,
+.value:active::before {
+  opacity: 1;
+}
+
+.value svg {
+  width: 15px
+}
+
+
+/* Main container  */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* Add some spacing between sections */
+  /* margin-bottom: 100px; */
+  padding-bottom: 32px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+/* First Section */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 60px;
+  gap: 10px;
+  width: 100%;
+  height: 770px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* Promo Banner */
+.card {
+  font-family: "Inter";
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.promo-text {
+  position: absolute;
+  z-index: 2;
+  left: 60px;
+  top: 60px;
+  width: 328px;
+  color: #ffffff;
+}
+
+.promo-text h1 {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 91px;
+  line-height: 75px;
+  letter-spacing: -5px;
+}
+
+.promo-text p {
+  font-family: "Inter";
+  color: white;
+  font-size: 18px;
+  line-height: 26px;
+  opacity: 0.8;
+  margin-bottom: 28px;
+}
+
+.promo-text .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 50px;
+  background-color: #ffffff00;
+  border: 1px solid white;
+  color: white;
+  border-radius: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.promo-image {
+  position: absolute;
+  width: 1000px;
+  left: 90px;
+  bottom: -10px;
+  z-index: 1;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* Photos Section */
+.photos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 352px;
+  height: 770px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.overlay-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  position: absolute;
+  width: 138px;
+  left: 30px;
+  top: 30px;
+  letter-spacing: -3px;
+  color: #121212;
+}
+
+.photos .card {
+  position: relative;
+  width: 352px;
+  height: 380px;
+  background: #d9d9d9;
+  border-radius: 40px;
+}
+
+/* Second Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  gap: 10px;
+  max-width: 1440px;
+  height: 380px;
+  margin-bottom: 32px;
+}
+
+.hero-text {
+  margin-top: -55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 380px;
+  max-width: 400px;
+}
+
+.hero-text-heading h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 65px;
+  line-height: 65px;
+  margin-bottom: 5px;
+}
+
+.hero-text-heading h3 {
+  font-size: 32px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 0;
+  line-height: 1;
+  color: #333;
+}
+
+.hero-text p {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.hero-btn button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 100px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero-card {
+  display: flex;
+  gap: 24px;
+}
+
+.hero-card-photo {
+  width: 480px;
+  height: 380px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.hero-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text2 {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: -1px;
+  width: 225px;
+}
+
+/* Arrows for Hero Cards */
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  /* Adjust the size of the arrow */
+  color: #ffffff;
+  /* White color */
+  opacity: 0.8;
+  /* Slight transparency */
+  transition: transform 0.3s ease;
+  /* Add smooth transition effect */
+}
+
+.hero-card-photo:hover .arrow {
+  transform: translateX(10px);
+  /* Move arrow slightly on hover */
+}
+
+/* Top Bar Links */
+.top-bar div a {
+  margin-left: 20px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.top-bar div a:hover {
+  color: black;
+}
+
+/* Search Bar Icon Color */
+.header .search-bar i {
+  color: #ccc;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.header .search-bar input:focus+i {
+  color: #000;
+}
+
+/* Navigation Links */
+.header .nav-links a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header .nav-links a:hover {
+  color: #000;
+  /* On hover, change text color */
+}
+
+.header .nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.header .nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Button Hover Effect */
+.promo-text .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 50px;
+  background-color: #ffffff00;
+  border: 1px solid white;
+  border-radius: 200px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.promo-text .btn:hover {
+  background-color: #ffffff;
+  color: black;
+  border: none;
+  transform: scale(1.05);
+}
+
+/* Hero Section Button */
+.hero-btn button {
+  color: white;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: black;
+  border: 2px solid black;
+  border-radius: 100px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn button:hover {
+  background-color: var(--button);
+  border: 2px solid var(--button);
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Hover Effect for Hero Card Photos */
+.hero-card-photo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Arrow Transition */
+.arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #ffffff;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.hero-card-photo:hover .arrow {
+  transform: translateX(10px);
+}
+
+/* Transition for Overlay Text */
+.overlay-text2 {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-card-photo:hover .overlay-text2 {
+  opacity: 0.9;
+  transform: translateY(-5px);
+}
+
+/* Card Hover Effect */
+.card-effect {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  /* Pop-up effect with shadow */
+}
+
+/* Gradient Overlay */
+.card-effect::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  /* Black gradient from bottom */
+  transition: height 0.3s ease;
+}
+
+.card-effect:hover::before {
+  height: 80%;
+  /* On hover, the gradient covers the whole card */
+}
+
+/* Overlay Text Appearance on Hover */
+.overlay-text,
+.overlay-text2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  color: #000000;
+  letter-spacing: -1px;
+  opacity: 0;
+  transform: translateY(20px);
+  /* Start slightly off-position */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.overlay-text2 {
+  color: white;
+}
+
+.card-effect:hover .overlay-text,
+.card-effect:hover .overlay-text2 {
+  opacity: 1;
+  transform: translateY(0);
+  /* Text pops up smoothly */
+}
+
+/* General Styling */
+
+.trending-container {
+  width: 100%;
+  padding: 20px 60px;
+  align-items: center;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #a2a2a2;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+}
+
+.filters::-webkit-scrollbar {
+  width: 0px;
+}
+
+.filters button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filters .active {
+  background-color: #000;
+  color: #fff;
+}
+
+.filters button:hover {
+  background-color: #f0f0f0;
+}
+
+/* <==============================>*/
+/* Product Grid */
+.product-name{
+  color: #000;
+}
+.selling-price{
+  color: #000;
+}
+.cart-btn:hover{
+  cursor: pointer;
+  color: white;
+  background-color: var(--theme-color);
+}
+.cart-btn svg{
+  font-size: smaller;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid */
+  gap: 16px; /* Space between cards */
+  padding: 16px;
+  justify-content: center;
+  align-items: start;
+}
+
+
+/* Product card should be fully responsive */
+.product-card {
+  width: 100%;
+  max-width: 350px; /* Maximum size */
+  margin: auto; /* Centering */
+}
+
+/* Ensure images resize properly */
+.product-image {
+  width: 100%; /* Full width */
+  height: 329.8px; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure proper cropping */
+}
+
+
+/* Ensure text does not overflow */
+.product-name {
+  word-wrap: break-word;
+  max-width: 100%
+}
+
+/* Adjust button responsiveness */
+.cart-btn {
+  width: 100%; /* Full width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+
+.quantity-input {
+  width: 3rem; /* Small fixed width */
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .quantity-input {
+      width: 2.5rem; /* Smaller screens */
+  }
+}
+
+/* <==============================>*/
+/* From Uiverse.io by adamgiebl */ 
+
+
+/* Global Styles */
+/* Global Styles */
+/* Main container styles */
+.feedback {
+  text-align: center;
+  padding: 20px 60px;
+  background-color: #fff;
+}
+
+/* Center the feedback-head content */
+.feedback-head {
+  display: flex;
+  flex-direction: column;
+  /* Aligns items vertically */
+  align-items: center;
+  /* Centers horizontally */
+  justify-content: center;
+  /* Centers vertically */
+  margin-bottom: 30px;
+  /* Adjust for spacing between header and reviews */
+}
+
+.feedback-head p {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  text-transform: capitalize;
+  color: #000000;
+  margin-bottom: 5px;
+  /* Added margin for spacing below */
+}
+
+.section-heading {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #000000;
+  margin: 15px 0;
+}
+
+/* Review card container to align cards */
+.review-block {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  /* Adjusted space between cards */
+  margin-top: 50px;
+  /* Added top margin for spacing below the heading */
+}
+
+/* Review Card Styles */
+.review-card {
+  width: 334px;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 60px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.review-card:hover {
+  background-color: var(--hover-color);
+}
+
+/* Wrapper to position the image */
+.image-wrapper {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Customer Image Styles */
+.customer-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Customer Name */
+.customer-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 20px 0 10px;
+}
+
+/* Review Text */
+.review-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: justify;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin: 0 20px;
+}
+
+/* Why You’ll Love Us Section */
+.section-heading2 {
+  width: 558px;
+  height: 130px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 65px;
+  /* or 108% */
+  letter-spacing: -3px;
+
+  color: #121212;
+}
+
+#why-love-us {
+  background-color: #ffffff;
+  padding: 20px 60px;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-box {
+  text-align: left;
+  width: 30%;
+  padding: 20px;
+  border-radius: 12px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.service-box h3 {
+  width: 410px;
+  height: 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 40px;
+  /* identical to box height, or 133% */
+  letter-spacing: -1px;
+
+  color: #121212;
+}
+
+.service-box p {
+  width: 410px;
+  height: 104px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  /* or 144% */
+  letter-spacing: -0.3px;
+
+  color: #121212;
+}
+
+.service-icon {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+p {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .review-container,
+  .service-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    width: 80%;
+  }
+}
+
+/* blog */
+/* Blog Section Container */
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 60px;
+  gap: 30px;
+  max-width: 100%;
+  width: 1320px;
+  height: 461px;
+  padding-bottom: 120px;
+  margin-bottom: 120px;
+  /* Add margin to avoid overlap */
+}
+
+/* Blog Title */
+.blog-title {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -1px;
+  color: #121212;
+  width: 1320px;
+  height: 38px;
+}
+
+/* Blog Content Row */
+.blog-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  gap: 60px;
+  width: 1320px;
+  height: 393px;
+}
+
+/* Blog Image Section */
+.blog-image {
+  position: relative;
+  width: 654px;
+  height: 367px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+/* Blog Text Section */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 24px;
+  width: 606px;
+  height: 393px;
+}
+
+.blog-header {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 65px;
+  letter-spacing: -3px;
+  color: #121212;
+  width: 606px;
+  height: 195px;
+}
+
+.blog-body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.3px;
+  color: #121212;
+  opacity: 0.8;
+  width: 566px;
+  height: 104px;
+}
+
+.read-more-btn {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 170px;
+  height: 50px;
+  border: 1px solid #121212;
+  border-radius: 200px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #121212;
+  text-decoration: none;
+}
+
+/* app section */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1440px;
+  height: 636px;
+  padding: 40px 0px;
+}
+
+.banner {
+  /* position: absolute; */
+  width: 1320px;
+  height: 556px;
+  background-image: url("../Images/Sliders/image\ \(2\).png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 60px;
+  color: #fff;
+  margin-top: 40px;
+  /* Add margin to ensure spacing */
+}
+
+.banner h2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  /* identical to box height, or 127% */
+  letter-spacing: -1px;
+
+  color: #ffffff;
+
+  opacity: 0.5;
+  margin-bottom: -40px;
+}
+
+.banner h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 65px;
+  line-height: 65px;
+  /* or 100% */
+  letter-spacing: -4px;
+
+  color: #ffffff;
+  width: 511px;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  width: 510px;
+  height: 52px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  /* or 144% */
+  letter-spacing: -0.3px;
+
+  color: #ffffff;
+
+  opacity: 0.8;
+}
+
+.app-text-content {
+  gap: 10px;
+}
+
+.playstore-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 0.625rem 1.5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  outline: 0;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.playstore-button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 1);
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.texts {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.text-1 {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-2 {
+  font-weight: 600;
+}
+
+/* From Uiverse.io by Yaya12085 */
+.playstore-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 0.625rem 1.5rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  outline: 0;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.playstore-button:hover {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 1);
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.texts {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.text-1 {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-2 {
+  font-weight: 600;
+}
+
+/* Review Card Styles */
+.review-card {
+  width: 334px;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 60px 20px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Added transition */
+}
+
+/* Hover effect for review cards */
+.review-card:hover {
+  transform: translateY(-5px);
+  /* Slight lift effect */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow on hover */
+}
+
+/* Read More Button Styles */
+.read-more-btn {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 170px;
+  height: 50px;
+  border: 1px solid #121212;
+  border-radius: 200px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #121212;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  /* Added transition */
+}
+
+/* Hover effect for read more button */
+.read-more-btn:hover {
+  background-color: #121212;
+  /* Dark background on hover */
+  color: #ffffff;
+  /* White text color on hover */
+}
+
+/* Footer */
+/* Footer */
+.footer {
+  border-top: 5px solid var(--theme-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  background: #121212;
+  color: #ffffff;
+  transition: background-color 0.3s ease-in-out;
+  /* Transition for background color */
+}
+
+.footer:hover {
+  background-color: #1a1a1a;
+  /* Slightly lighter background on hover */
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 45px;
+  width: 485px;
+}
+
+.footer-logo {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 60px;
+  transition: transform 0.3s ease;
+  /* Smooth logo scale animation */
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+  /* Slightly increase size on hover */
+}
+
+.footer-description {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  opacity: 0.52;
+  width: 290px;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
+  /* Fade effect */
+}
+
+.footer-description:hover {
+  opacity: 0.75;
+  /* Make description a bit more visible on hover */
+}
+
+.footer-email {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.footer-input {
+  width: 250px;
+  height: 45px;
+  padding: 0 15px;
+  border: 1px solid #ffffff;
+  border-radius: 200px;
+  background-color: transparent;
+  color: #ffffff;
+  opacity: 0.52;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  /* Transition on focus and hover */
+}
+
+.footer-input:hover,
+.footer-input:focus {
+  opacity: 1;
+  /* Fully visible when focused or hovered */
+  border-color: #ffffff;
+  /* Maintain white border */
+}
+
+.footer-submit {
+  width: 105px;
+  height: 45px;
+  background-color: #ffffff;
+  border-radius: 200px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #121212;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Button transitions */
+}
+
+.footer-submit:hover {
+  background-color: var(--theme-color);
+  color: #fff;
+  /* Lighter background on hover */
+  transform: scale(1.1);
+  /* Slightly larger button on hover */
+}
+
+.footer-right {
+  display: flex;
+  gap: 100px;
+  padding: 45px;
+}
+
+.footer-row {
+  gap: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-column h3 {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  /* Transition for column titles */
+}
+
+.footer-column h3:hover {
+  color: #f1f1f1;
+  /* Change title color on hover */
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column li {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  opacity: 0.52;
+  margin-top: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Fade and movement transitions */
+}
+
+.footer-column li:hover {
+  opacity: 0.85;
+  /* Increase visibility on hover */
+  transform: translateX(5px);
+  /* Slight shift to the right on hover */
+  cursor: pointer;
+}
+
+/* Bottom Navigation */
+/* Fixed Bottom Navigation */
+/* Container styling */
+section {
+  --col-dark: #ffffff;
+  --col-gray: #000000;
+  --col-click: var(--theme-color);
+
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  /* Adjust to space-around */
+  background-color: var(--col-dark);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 5px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  /* Allow each anchor to grow equally */
+}
+
+.label {
+  position: relative;
+  /* Needed for positioning the line */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  transition: color 200ms;
+  cursor: pointer;
+}
+
+.label::before {
+  content: "";
+  display: block;
+  width: 0%;
+  /* Initially hidden */
+  height: 2px;
+  /* Height of the line */
+  background: var(--col-click);
+  /* Color of the line */
+  position: absolute;
+  top: 0px;
+  /* Position above the icon */
+  transition: width 200ms;
+  /* Animation for the width */
+}
+
+.label.active::before {
+  width: 75%;
+  height: 5px;
+  border-radius: 25px;
+  /* Full width of the line when active */
+}
+
+.label .material-symbols-outlined {
+  font-size: 28px;
+  /* Adjusted for better visual balance */
+  font-weight: 400;
+  /* Set a standard weight for icons */
+  color: var(--col-gray);
+  /* Default color */
+  transition: color 200ms;
+}
+
+.label .icon-label {
+  margin-top: 4px;
+  font-size: 12px;
+  /* Label font size */
+  color: var(--col-gray);
+  /* Default label color */
+}
+
+.label.active .material-symbols-outlined,
+.label.active .icon-label {
+  color: var(--col-click);
+  /* Color change for active state */
+}
+
+.label:hover .material-symbols-outlined,
+.label:hover .icon-label {
+  color: var(--col-click);
+  /* Optional color change on hover */
+}

@@ -1,0 +1,20 @@
+img{
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 100); */
+}
+
+.img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #a508ff;
+    box-shadow: 0 4px 12px rgba(165, 8, 255, 0.5);
+    filter: drop-shadow(0 4px 12px #a408ff60);
+}
